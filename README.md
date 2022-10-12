@@ -1,4 +1,4 @@
-<img src="./src/assets/mka.svg" height="250" />
+<img src="./src/assets/martykitchenart.svg" height="250" />
 
 # Marty Kitchen Art
 ## Website commissioned for Marty Kitchen Art
