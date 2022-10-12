@@ -88,16 +88,16 @@
         width: 100%;
     }
     .blurb h1{
-        font-size: 4em;
+        font-size: 5em;
     }
     .blurb h2{
-        font-size: 3em;
+        font-size: 4em;
     }
     .blurb h5{
-        font-size: 2em;
+        font-size: 2.2em;
     }
     .blurb > p, ul {
-        font-size: 3em;
+        font-size: 3.2em;
     }
     button {
         font-size: 2.5em;

@@ -50,7 +50,9 @@
 .contactHead{
     text-align: left;
 }
-
+.contactHead p{
+    font-size: 1.2em;
+}
 .MainView{
     box-sizing: border-box;
     display: grid;

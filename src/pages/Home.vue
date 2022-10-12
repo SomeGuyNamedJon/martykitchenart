@@ -89,10 +89,11 @@
             "MainText";
     }
     .Title h1 {
-        font-size: 2em;
+        margin-top: 0;
+        font-size: 3.5em;
     }
     .Title h2 {
-        font-size: 1.1em;
+        font-size: 2em;
     }
     .KitchenImage{
         max-height: 200px;

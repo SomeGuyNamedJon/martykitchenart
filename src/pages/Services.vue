@@ -92,6 +92,9 @@
 .blurb h2 {
     line-height: 1.0125;
 }
+.blurb p, ul {
+    font-size: 1.5em;
+}
 .LeftImage { 
     grid-area: LeftImage; 
     overflow: hidden;
@@ -142,7 +145,7 @@
         font-size: 2.5em;
     }
     .Title h2 {
-        font-size: 1.1em;
+        font-size: 1.75em;
     }
     .LeftImage, .RightImage {
         max-height: 50vw;
@@ -166,8 +169,12 @@
         bottom: 50%;
     }
 
-    ul, .blurb p{
-        font-size: 2.5em;
+    .blurb h2{
+        font-size: 4em;
+    }
+
+    .blurb p, ul{
+        font-size: 3em;
     }
     
 }
