@@ -14,7 +14,8 @@
             const route = useRoute();
             const currentPage = computed(() => route.name)
             const json = (props.lang === 'en') ? en : es
-            return {json, currentPage}
+            const pages = Object.keys(json);
+            return {json, currentPage, pages}
         },
         components: { NavLink },
         data(){
@@ -29,8 +30,11 @@
     <div :class="{shown: checked}">
     <div class="coverBar">
         <div v-if="!checked" class="currentPage">
-            <div v-if="currentPage">
+            <div v-if="currentPage && pages.includes(currentPage)">
             <font-awesome-icon :icon="json[currentPage].icon"/> &nbsp; {{json[currentPage].name}}
+            </div>
+            <div v-else-if="!pages.includes(currentPage)">
+                Uh oh! @.@"
             </div>
             <div v-else>
             <font-awesome-icon :icon="json['home'].icon"/> &nbsp; {{json['home'].name}}
