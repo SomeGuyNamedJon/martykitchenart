@@ -1,22 +1,22 @@
-[
 {
+"home" : {
     "name" : "Home",
     "icon" : "home",
     "page" : "home"
 },
-{
+"about" : {
     "name" : "About Us",
     "icon" : "circle-info",
     "page" : "about"
 },
-{
+"services" : {
     "name" : "Services",
     "icon" : "toolbox",
     "page" : "services"
 },
-{
+"contact" : {
     "name" : "Contact",
     "icon" : "envelope",
     "page" : "contact"
 }
-]
+}

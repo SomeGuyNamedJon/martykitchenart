@@ -3,14 +3,18 @@
     import en from '@/assets/json/en/navbar.json'
     import es from '@/assets/json/es/navbar.json'
     import NavLink from '@/components/NavLink.vue'
+    import { computed } from '@vue/reactivity'
+    import { useRoute } from 'vue-router'
     
     export default{
         props: {
             lang: {type: String}
         },
         setup(props){
+            const route = useRoute();
+            const currentPage = computed(() => route.name)
             const json = (props.lang === 'en') ? en : es
-            return {json}
+            return {json, currentPage}
         },
         components: { NavLink },
         data(){
@@ -24,6 +28,15 @@
 <template>
     <div :class="{shown: checked}">
     <div class="coverBar">
+        <div v-if="!checked" class="currentPage">
+            <div v-if="currentPage">
+            <font-awesome-icon :icon="json[currentPage].icon"/> &nbsp; {{json[currentPage].name}}
+            </div>
+            <div v-else>
+            <font-awesome-icon :icon="json['home'].icon"/> &nbsp; {{json['home'].name}}
+            </div>
+        </div>
+        
         <input v-model="checked" type="checkbox" id="check"/>
         <label for="check" class="hamburgerMenu">
             <font-awesome-icon id="MenuIcon" icon="chevron-left"/>
@@ -36,14 +49,6 @@
 </template>
 
 <style scoped>
-
-.coverBar {
-    background-color: var(--darkblue);
-    height: 0px;
-    visibility: hidden;
-    overflow: hidden;
-    width: 100vw;
-}
 .navBar {
   display: flex;
   justify-content: center;
@@ -66,26 +71,44 @@
   width: 15vw;
   height: 30px;
 }
-
 .navLink:hover{
   background-color: rgb(0, 0, 104);
 }
-
 .navLink.active {
   font-weight: bolder;
   background-color: #f0f0f0;
   color:var(--darkblue) !important;
 }
+.coverBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--darkblue);
+    height: 0px;
+    visibility: hidden;
+    width: 100vw;
+}
+.currentPage {
+    position: relative;
+    left: 40%;
+    color:#f0f0f0 !important;
+    font-size: larger;
+    font-weight: bold;
+    line-height: 30px;
+    float: center;
+}
 .hamburgerMenu {
     position: relative;
-    left: 90%;
+    left: 50px;
+    margin-left: auto;
     font-size: 20px;
     color: #f0f0f0;
     line-height: 30px;
     cursor: pointer;
     display: none;
     border-radius: 100px;
-    max-width: 100px;
+    width: 100px;
+    height: 30px;
     background-color: var(--darkred);
 }
 #MenuIcon {
@@ -124,6 +147,9 @@
         width: 100%;
         font-size: larger;
         visibility: visible;
+    }
+    .shown .coverBar {
+        height: 10px;
     }
     .shown .navBar {
         display: block;
