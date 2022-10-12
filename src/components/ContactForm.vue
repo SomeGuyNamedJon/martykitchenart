@@ -24,21 +24,31 @@
             }
         },
         methods: {
-            onSubmit(e){
-                e.preventDefault()
-                emailjs.send("submit_service","contact_form", this)
+            onSubmit(e){                
+                e.preventDefault();
+                var success = false;
+                var valid = false;
+
+                //check fields for invalid characters or required fields empty
+
+                if(valid){
+                    emailjs.send("submit_service","contact_form", this)
                     .then(function() {
                         console.log('SUCCESS!');
-                        this.name = '';
-                        this.email = '';
-                        this.phone = '';
-                        this.address = '';
-                        this.topic = '';
-                        this.comment = '';
+                        success = !success;
                     }, function(error) {
                         console.log('FAILED...', error);
                     });
-
+                }
+                
+                if(success){
+                    this.name = '';
+                    this.email = '';
+                    this.phone = '';
+                    this.address = '';
+                    this.topic = '';
+                    this.comment = '';
+                }
             } 
         }
     }
