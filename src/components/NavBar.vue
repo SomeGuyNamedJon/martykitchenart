@@ -107,7 +107,7 @@
     }
     .navLink {
         text-align: justify;
-        padding-inline-start: 42%;
+        padding-inline-start: 40%;
         visibility: collapse;
     }
     .hamburgerMenu{

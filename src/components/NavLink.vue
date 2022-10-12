@@ -18,6 +18,6 @@
 
 <template>
     <RouterLink class="navLink" :to="{name: page}" :class="{ active: isActive }">
-            <font-awesome-icon :icon="icon"/> {{name}}
+            <font-awesome-icon :icon="icon"/> &nbsp; {{name}}
     </RouterLink> 
 </template>
