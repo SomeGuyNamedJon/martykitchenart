@@ -1,0 +1,14 @@
+{
+    "name":"Nombre",
+    "name_ph":"Ingresa tu nombre...",
+    "address":"Dirección",
+    "address_ph":"Ingresa tu dirección...",
+    "email":"Email",
+    "phone":"Teléfono",
+    "email_ph":"Ingresa tu email...",
+    "topic":"Asunto",
+    "phone_ph":"Introduce tu número de teléfono...",
+    "topic_ph":"Escribe el asunto",
+    "msg":"Mensaje",
+    "msg_ph":"Escribe tu mensaje aquí..."
+}

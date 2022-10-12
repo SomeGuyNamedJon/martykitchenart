@@ -1,0 +1,22 @@
+[
+{
+    "name" : "Home",
+    "icon" : "home",
+    "page" : "home"
+},
+{
+    "name" : "About Us",
+    "icon" : "circle-info",
+    "page" : "about"
+},
+{
+    "name" : "Services",
+    "icon" : "toolbox",
+    "page" : "services"
+},
+{
+    "name" : "Contact",
+    "icon" : "envelope",
+    "page" : "contact"
+}
+]
