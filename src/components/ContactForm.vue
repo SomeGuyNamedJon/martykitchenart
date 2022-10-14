@@ -74,11 +74,13 @@
                         "topic" : this.topic,
                         "comment" : this.comment,
                     }
-                    emailjs.send("submit_service","contact_form", body)
+                    success = emailjs.send("submit_service","contact_form", body)
                     .then(function() {
                         console.log('SUCCESS!')
+                        return true
                     }, function(error) {
                         console.log('FAILED...', error)
+                        return false
                     })
                     if(this.email != '' && (this.topic != '' || this.comment != '')){
                         emailjs.send("submit_service", "confirmation_msg", body)
