@@ -141,7 +141,7 @@
         </div>
         
         <button class="btn">
-            <font-awesome-icon icon="circle-check"/> Submit
+            <font-awesome-icon icon="circle-check"/> &nbsp;{{json.submit}}
         </button>
     </form>
 </template>

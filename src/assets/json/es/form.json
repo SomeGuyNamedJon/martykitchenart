@@ -10,5 +10,6 @@
     "topic":"Asunto",
     "topic_ph":"Escribe el asunto",
     "msg":"Mensaje",
-    "msg_ph":"Escribe tu mensaje aquí..."
+    "msg_ph":"Escribe tu mensaje aquí...",
+    "submit":"Enviar"
 }

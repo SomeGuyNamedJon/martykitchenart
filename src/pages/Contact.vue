@@ -30,7 +30,7 @@
     </div>
     <div class="Links">
         <h2>{{json.email}}</h2>
-        <h3>{{json.phone}}</h3>
+        <h2>{{json.phone}}</h2>
     </div>
 </div>
 </template>
