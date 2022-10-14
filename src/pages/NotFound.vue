@@ -1,12 +1,13 @@
 <script>
     import en from '@/assets/json/en/404.json'
+    import es from '@/assets/json/es/404.json'
     
     export default{
         props: {
             lang: {type: String}
         },
         setup(props){
-            const json = (props.lang === 'es') ? en : en
+            const json = (props.lang === 'es') ? es : en
             return {json}
         },
     }
@@ -29,7 +30,7 @@
     position: relative;
     overflow: hidden;
     background-color: var(--darkblue);
-    min-height: 100vh;
+    height: 100vh;
 }
 .title {
     position: absolute;
@@ -49,7 +50,7 @@
 
 .title h3 {
     position: relative;
-    bottom: 15vh;
+    bottom: 100px;
     font-size: 4em;
 }
 .background {
@@ -64,5 +65,27 @@
    left: -80px;
    line-height: 0%;
    color: #f0f0f0;
+}
+
+@media only screen and (max-width: 640px){
+    .container{
+        max-height: 75vh;
+    }
+
+    .background h1{
+        font-size: 75vw;
+        writing-mode: vertical-rl;
+        left: 50vw;
+        bottom: 0;
+    }
+
+    .title h2{
+        font-size: 7em;
+    }
+
+    .title h3{
+        font-size: 3.25em;
+        bottom: 50px;
+    }
 }
 </style>
