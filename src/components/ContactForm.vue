@@ -1,6 +1,8 @@
 <script>
     import en from '@/assets/json/en/form.json'
     import es from '@/assets/json/es/form.json'
+    import enErr from '@/assets/json/en/errors.json'
+    import esErr from '@/assets/json/es/errors.json'
     import emailjs from 'emailjs-com'
 
     export default{
@@ -10,7 +12,8 @@
         setup(props){
             emailjs.init('eE-trqXuIbiTQ-XvR');
             const json = (props.lang === 'es') ? es : en
-            return {json}
+            const err = (props.lang === 'es') ? esErr : enErr
+            return {json, err}
         },
         name : 'ContactForm',
         data (){
@@ -21,33 +24,64 @@
                 address : '',
                 topic : '',
                 comment : '',
+                nameErr : '',
+                emailErr : '',
+                phoneErr : '',
+                addErr : '',
+                topicErr : '',
+                commentErr : '',
             }
         },
         methods: {
             onSubmit(e){                
                 e.preventDefault();
-                var success = false;
-                var valid = false;
+                const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+                const phoneRegex = /^(\+1)?(-|\.)?(\(\d{3}\)|\d{3})(-|\.)?\d{3}(-|\.)?\d{4}$/
+                var success = false
+                var valid = false //change to true when you want to turn emails on
 
-                //check fields for invalid characters or required fields empty
+                //validate fields
+                if(this.name == ''){
+                    this.nameErr = 'null'
+                    valid = false
+                }else{
+                    this.nameErr = ''
+                }
+                
+                if(this.phone == ''){
+                    this.phoneErr = 'null'
+                    valid = false
+                }else if(!phoneRegex.test(this.phone)){
+                    this.phoneErr = 'invalid'
+                    valid = false
+                }else{
+                    this.phoneErr = ''
+                }
+
+                if(!emailRegex.test(this.email) && !(this.email == '')){
+                    this.emailErr = 'invalid'
+                    valid = false
+                }else{
+                    this.emailErr = ''
+                }
 
                 if(valid){
                     emailjs.send("submit_service","contact_form", this)
                     .then(function() {
-                        console.log('SUCCESS!');
-                        success = !success;
+                        console.log('SUCCESS!')
+                        success = !success
                     }, function(error) {
-                        console.log('FAILED...', error);
-                    });
+                        console.log('FAILED...', error)
+                    })
                 }
                 
                 if(success){
-                    this.name = '';
-                    this.email = '';
-                    this.phone = '';
-                    this.address = '';
-                    this.topic = '';
-                    this.comment = '';
+                    this.name = ''
+                    this.email = ''
+                    this.phone = ''
+                    this.address = ''
+                    this.topic = ''
+                    this.comment = ''
                 }
             } 
         }
@@ -56,41 +90,54 @@
 
 <template>
     <form id="contact-form" @submit="onSubmit"> 
-        <div id="nameBox">
-            <label>{{json.name}}</label>
+        <div id="nameBox" :class="{'form-err' : nameErr}">
+            <label>{{json.name}} *</label>
             <input class="form-input" type="text" id="name" v-model="name" :placeholder="json.name_ph">
-            <p class="help-block" id="nameHelp"></p>
+            <div class="help-block" id="nameHelp">
+                <p v-if="nameErr == 'null'">{{err.name_null}}</p>
+            </div>
         </div>
         <div class="form-container">
-            <div id="emailBox">
+            <div id="emailBox" :class="{'form-err' : emailErr}">
                 <label>{{json.email}}</label>
                 <input class="form-input" type="text" id="email" v-model="email" :placeholder="json.email_ph">
-                <p class="help-block" id="emailHelp"></p>
+                <div class="help-block" id="emailHelp">
+                    <p v-if="emailErr == 'invalid'">{{err.email_invalid}}</p>
+                </div>
             </div>
 
-            <div id="phoneBox">
-                <label>{{json.phone}}</label>
+            <div id="phoneBox" :class="{'form-err' : phoneErr}">
+                <label>{{json.phone}} *</label>
                 <input class="form-input" type="text" id="phone" v-model="phone" :placeholder="json.phone_ph">
-                <p class="help-block" id="phoneHelp"></p>
+                <div class="help-block" id="phoneHelp">
+                    <p v-if="phoneErr == 'null'">{{err.phone_null}}</p>
+                    <p v-if="phoneErr == 'invalid'">{{err.phone_invalid}}</p>
+                </div>
             </div>
         </div>
 
-        <div id="addressBox">
+        <div id="addressBox" :class="{'form-err' : addErr}">
             <label>{{json.address}}</label>
             <input class="form-input" type="text" id="address" v-model="address" :placeholder="json.address_ph">
-            <p class="help-block" id="addressHelp"></p>
+            <div class="help-block" id="addressHelp">
+                <p v-if="addErr"></p>
+            </div>
         </div>
 
-        <div id="topicBox">
+        <div id="topicBox" :class="{'form-err' : topicErr}">
             <label>{{json.topic}}</label>
             <input class="form-input" type="text" id="topic" v-model="topic" :placeholder="json.topic_ph">
-            <p class="help-block" id="topicHelp"></p>
+            <div class="help-block" id="topicHelp">
+                <p v-if="topicErr"></p>
+            </div>
         </div>
 
-        <div id="commentBox">
+        <div id="commentBox" :class="{'form-err' : commentErr}">
             <label>{{json.msg}}</label>
             <textarea class="form-input" id="comment" v-model="comment" rows="10" :placeholder="json.msg_ph"></textarea>
-            <p class="help-block" id="commentHelp"></p>
+            <div class="help-block" id="commentHelp">
+                <p v-if="commentErr"></p>
+            </div>
         </div>
         
         <button class="btn">

@@ -4,10 +4,10 @@
     "address":"Dirección",
     "address_ph":"Ingresa tu dirección...",
     "email":"Email",
-    "phone":"Teléfono",
     "email_ph":"Ingresa tu email...",
+    "phone":"Teléfono",
+    "phone_ph":"Introduce tu número de telféono...",
     "topic":"Asunto",
-    "phone_ph":"Introduce tu número de teléfono...",
     "topic_ph":"Escribe el asunto",
     "msg":"Mensaje",
     "msg_ph":"Escribe tu mensaje aquí..."

@@ -4,10 +4,10 @@
     "address":"Address",
     "address_ph":"Your address here...",
     "email":"Email",
-    "phone":"Phone Number",
     "email_ph":"Your email here...",
-    "topic":"Inquiry",
+    "phone":"Phone Number",
     "phone_ph":"Your phone number here...",
+    "topic":"Inquiry",
     "topic_ph":"Subject of inquiry...",
     "msg":"Description",
     "msg_ph":"Describe your inquiry with more detail..."

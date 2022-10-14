@@ -1,0 +1,6 @@
+{
+    "name_null":"Nombre es nesecario...",
+    "phone_null":"Número de teléfono es nesecario...",
+    "phone_invalid":"Debe ser un número de teléfono válido...",
+    "email_invalid":"Debe ser un correo electrónico válido..."
+}
