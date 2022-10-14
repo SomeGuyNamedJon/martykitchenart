@@ -71,8 +71,18 @@
 #side{
     min-width: 100%;
 }
+@media only screen and (max-width: 1080px){
+    .MainView{
+        grid-template-columns: 1fr 2fr;
+    }
+}
+@media only screen and (max-width: 700px){
+    .MainView{
+        grid-template-columns: 1fr 3fr;
+    }
+}
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 650px) {
     .MainView{
         grid-template-columns: 1fr;
         grid-template-rows: min-content 1fr min-content;

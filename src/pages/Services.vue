@@ -111,7 +111,7 @@ button{
     background-color: #f0f0f0;
 }
 button:hover{
-    background-color: #ffffff;
+    background-color: #e0e0e0;
 }
 .blurb{
     color: #f0f0f0;
@@ -126,12 +126,12 @@ button:hover{
 .LeftImage{ 
     grid-area: LeftImage; 
     overflow: hidden;
-    max-height: 40vw;
+    max-height: 50vw;
 }
 .RightImage{ 
     grid-area: RightImage; 
     overflow: hidden;
-    max-height: 40vw;
+    max-height: 50vw;
 }
 .MiddleImage{
     grid-area: MiddleImage;
@@ -146,14 +146,14 @@ button:hover{
 #right{
     position: relative;
     max-height: 100%;
-    min-width: 200%;
+    min-width: 100%;
     bottom: 0;
 }
 #mid{
     position: relative;
-    max-height: 100%;
+    min-height: 100%;
     min-width: 200%;
-    right: 45%;
+    right: 70%;
     bottom: 0;
 }
 @media only screen and (max-width: 640px){
