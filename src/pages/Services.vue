@@ -51,6 +51,12 @@
     <div class="RightImage">
         <img id="right" src="@/assets/photos/servicesright.webp"/> 
     </div>
+    <div class="ContactUs">
+        <h1>{{json.contact}}</h1>
+    </div>
+    <div class="Button">
+        <RouterLink to="/contact"><button>{{json.btn}}</button></RouterLink>
+    </div>
 </div>
 </template>
 
@@ -58,18 +64,19 @@
 .MainView{
     box-sizing: border-box;
     display: grid;
-    grid-template-rows: min-content min-content min-content;
+    grid-template-rows: min-content min-content min-content min-content;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
         "Title Title Title"
         "LeftImage MiddleText RightImage"
-        "LeftText MiddleImage RightText";
+        "LeftText MiddleImage RightText"
+        "ContactUs ContactUs Button";
     
 }    
 .Title{
     grid-area: Title;
 }
-.MiddleText {
+.MiddleText{
     background-color: var(--darkblue); 
     grid-area: MiddleText; 
 }
@@ -81,26 +88,49 @@
     grid-area: RightText;
     background-color: var(--darkblue); 
 }
-.Extra { 
-    grid-area: Extra; 
+.ContactUs{ 
+    grid-area: ContactUs;
+    background-color: var(--darkblue);
+    color: #f0f0f0;
+    font-size: 1.25vw; 
+    padding: 5px;
 }
-
-.blurb {
+.Button{
+    grid-area: Button;
+    background-color: var(--darkblue);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    position: relative;
+    width: 25vw;
+    height: 60%;
+    border-radius: 100px;
+    font-size: 175%;
+    color: var(--darkblue);
+    background-color: #f0f0f0;
+}
+button:hover{
+    background-color: #ffffff;
+}
+.blurb{
     color: #f0f0f0;
 }
 
-.blurb h2 {
+.blurb h2{
     line-height: 1.0125;
 }
-.blurb p, ul {
+.blurb p, ul{
     font-size: 1.5em;
 }
-.LeftImage { 
+.LeftImage{ 
     grid-area: LeftImage; 
     overflow: hidden;
     max-height: 40vw;
 }
-.RightImage { 
+.RightImage{ 
     grid-area: RightImage; 
     overflow: hidden;
     max-height: 40vw;
@@ -110,27 +140,27 @@
     overflow: hidden;
     max-height: 60vw;
 }
-#left {
-        position: relative;
-        min-height: 100%;
-        min-width: 200%;
-    }
-#right {
-        position: relative;
-        max-height: 100%;
-        min-width: 200%;
-        bottom: 0;
-    }
-#mid {
-        position: relative;
-        max-height: 100%;
-        min-width: 200%;
-        right: 45%;
-        bottom: 0;
+#left{
+    position: relative;
+    min-height: 100%;
+    min-width: 200%;
 }
-@media only screen and (max-width: 640px) {
+#right{
+    position: relative;
+    max-height: 100%;
+    min-width: 200%;
+    bottom: 0;
+}
+#mid{
+    position: relative;
+    max-height: 100%;
+    min-width: 200%;
+    right: 45%;
+    bottom: 0;
+}
+@media only screen and (max-width: 640px){
     .MainView{
-        grid-template-rows: min-content min-content 1fr min-content 1fr min-content 1fr;
+        grid-template-rows: min-content min-content 1fr min-content 1fr min-content 1fr min-content;
         grid-template-columns: 1fr;
         grid-template-areas: 
             "Title"
@@ -139,43 +169,51 @@
             "RightImage"
             "LeftText"
             "MiddleImage"
-            "RightText";
+            "RightText"
+            "ContactUs"
+            "Button";
     }
-    .Title h1 {
+    .Title h1{
         font-size: 2.5em;
     }
-    .Title h2 {
+    .Title h2{
         font-size: 1.75em;
     }
-    .LeftImage, .RightImage {
+    .LeftImage, .RightImage{
         max-height: 50vw;
     }
     .MiddleImage{
         max-height: 50vw;
     }
-    #left {
+    #left{
         position: relative;
         max-height: 100%;
     }
-    #right {
+    #right{
         position: relative;
         max-height: 200%;
         bottom: 50%;
     }
-    #mid {
+    #mid{
         position: relative;
         max-height: 200%;
         right: 22%;
         bottom: 50%;
     }
-
     .blurb h2{
         font-size: 4em;
     }
-
     .blurb p, ul{
         font-size: 3em;
     }
-    
+    .ContactUs{
+        font-size: 2.75vw;
+    }
+    .Button{
+        padding: 25px;
+    }
+    button{
+        width: 75vw;
+    }
 }
 </style>
