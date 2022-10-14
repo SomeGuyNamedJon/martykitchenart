@@ -30,7 +30,7 @@
                 addErr : '',
                 topicErr : '',
                 commentErr : '',
-                success : true,
+                success : false,
             }
         },
         methods: {
