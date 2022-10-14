@@ -1,6 +1,8 @@
 <script>
     import en from '@/assets/json/en/about.json'
     import es from '@/assets/json/es/about.json'
+    import enContact from '@/assets/json/en/contact.json'
+    import esContact from '@/assets/json/es/contact.json'
     
     export default{
         props: {
@@ -8,7 +10,8 @@
         },
         setup(props){
             const json = (props.lang === 'es') ? es : en
-            return {json}
+            const contact = (props.lang === 'es') ? esContact : enContact
+            return {json, contact}
         },
     }
 </script>
@@ -36,6 +39,10 @@
                 <li>{{json.h_l3}}</li>
             </ul>
             <RouterLink to="/contact"><button>{{json.btn}}</button></RouterLink>
+        </div>
+        <div class="contactInfo">
+            <h2>{{contact.phone}}</h2>
+            <h2>{{contact.email}}</h2>
         </div>
     </div>
 </div>
@@ -66,8 +73,18 @@
     display: flex;
 }
 .HoursBox{
+    position: relative;
     grid-area: HoursBox;
-    display: flex;
+    display: flexbox;
+}
+.contactInfo{
+    position: absolute;
+    height: max-content;
+    text-align: right;
+    bottom: 50px;
+    right: 75px;
+    font-weight: lighter;
+    font-size: 1.5vw;
 }
 .blurb h5 {
     font-size: 1em;
@@ -84,6 +101,15 @@
             "LeftImage"
             "HoursBox"; 
     }
+    .contactInfo{
+        position: relative;
+        bottom: 0;
+        right: 0;
+        padding-top: 0;
+        margin-top: 0;
+        text-align: center;
+        font-size: 3.5vw;
+    }
     #side {
         width: 100%;
     }
@@ -91,15 +117,15 @@
         font-size: 5em;
     }
     .blurb h2{
-        font-size: 4em;
+        font-size: 5em;
     }
     .blurb h5{
         font-size: 2.2em;
     }
-    .blurb > p, ul {
+    .blurb p, ul{
         font-size: 3.2em;
     }
-    button {
+    button{
         font-size: 2.5em;
     }
 }
