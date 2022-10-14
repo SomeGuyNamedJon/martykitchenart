@@ -38,7 +38,7 @@
                 const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
                 const phoneRegex = /^(\+1)?(-|\.)?(\(\d{3}\)|\d{3})(-|\.)?\d{3}(-|\.)?\d{4}$/
                 var success = false
-                var valid = false //change to true when you want to turn emails on
+                var valid = true //change to true when you want to turn emails on
 
                 //validate fields
                 if(this.name == ''){
