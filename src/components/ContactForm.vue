@@ -73,6 +73,14 @@
                     }, function(error) {
                         console.log('FAILED...', error)
                     })
+                    if(this.email != '' && this.topic != '' && this.comment != ''){
+                        emailjs.send("submit_service", "confirmation_msg", this)
+                        .then(function() {
+                            console.log('SUCCESS!')
+                        }, function(error) {
+                            console.log('FAILED...', error)
+                        })
+                    }
                 }
                 
                 if(success){
