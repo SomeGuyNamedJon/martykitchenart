@@ -37,8 +37,8 @@
                 e.preventDefault();
                 const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
                 const phoneRegex = /^(\+1)?(-|\.)?(\(\d{3}\)|\d{3})(-|\.)?\d{3}(-|\.)?\d{4}$/
-                var success = false
-                var valid = true //change to true when you want to turn emails on
+                var success = true
+                var valid = false //change to true when you want to turn emails on
 
                 //validate fields
                 if(this.name == ''){
@@ -66,15 +66,22 @@
                 }
 
                 if(valid){
-                    emailjs.send("submit_service","contact_form", this)
+                    var body = {
+                        "name" : this.name,
+                        "email" : this.email,
+                        "phone" : this.phone,
+                        "address" : this.address,
+                        "topic" : this.topic,
+                        "comment" : this.comment,
+                    }
+                    emailjs.send("submit_service","contact_form", body)
                     .then(function() {
                         console.log('SUCCESS!')
-                        success = !success
                     }, function(error) {
                         console.log('FAILED...', error)
                     })
-                    if(this.email != '' && this.topic != '' && this.comment != ''){
-                        emailjs.send("submit_service", "confirmation_msg", this)
+                    if(this.email != '' && (this.topic != '' || this.comment != '')){
+                        emailjs.send("submit_service", "confirmation_msg", body)
                         .then(function() {
                             console.log('SUCCESS!')
                         }, function(error) {
@@ -84,12 +91,7 @@
                 }
                 
                 if(success){
-                    this.name = ''
-                    this.email = ''
-                    this.phone = ''
-                    this.address = ''
-                    this.topic = ''
-                    this.comment = ''
+                    this.$refs.contact_form.reset();
                 }
             } 
         }
@@ -97,7 +99,7 @@
 </script>
 
 <template>
-    <form id="contact-form" @submit="onSubmit"> 
+    <form ref="contact_form" @submit="onSubmit"> 
         <div id="nameBox" :class="{'form-err' : nameErr}">
             <label>{{json.name}} *</label>
             <input class="form-input" type="text" id="name" v-model="name" :placeholder="json.name_ph">
