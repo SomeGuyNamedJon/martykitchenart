@@ -93,7 +93,12 @@
                 }
                 
                 if(this.success){
-                    this.$refs.contact_form.reset();
+                    this.name = '';
+                    this.email = '';
+                    this.phone = '';
+                    this.address = '';
+                    this.topic = '';
+                    this.comment = '';
                 }
             } 
         }
