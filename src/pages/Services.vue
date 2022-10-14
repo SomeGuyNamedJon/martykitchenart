@@ -52,7 +52,7 @@
         <img id="right" src="@/assets/photos/servicesright.webp"/> 
     </div>
     <div class="ContactUs">
-        <h1>{{json.contact}}</h1>
+        <h1>{{json.contact}} <font-awesome-icon icon="caret-right"/></h1>
     </div>
     <div class="Button">
         <RouterLink to="/contact"><button>{{json.btn}}</button></RouterLink>
@@ -104,11 +104,9 @@
     align-items: center;
 }
 button{
-    position: relative;
     width: 25vw;
-    height: 60%;
     border-radius: 100px;
-    font-size: 175%;
+    font-size: 40px;
     color: var(--darkblue);
     background-color: #f0f0f0;
 }
@@ -207,13 +205,24 @@ button:hover{
         font-size: 3em;
     }
     .ContactUs{
-        font-size: 2.75vw;
+        font-size: 2.25vw;
     }
     .Button{
         padding: 25px;
     }
     button{
         width: 75vw;
+        font-size: 30px;
+    }
+}
+@media only screen and (max-width: 1075px){
+    button{
+        font-size: 30px;
+    }
+}
+@media only screen and (max-width: 815px){
+    button{
+        font-size: 25px;
     }
 }
 </style>

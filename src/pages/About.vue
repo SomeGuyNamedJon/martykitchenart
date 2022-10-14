@@ -32,7 +32,7 @@
     <div class="HoursBox">
         <div class="blurb">
             <h1>{{json.h_title}}</h1>
-            <h2>{{json.h_subtitle}}</h2>
+            <h2><font-awesome-icon icon="phone"/> {{json.h_subtitle}}</h2>
             <ul>
                 <li>{{json.h_l1}}</li>
                 <li>{{json.h_l2}}</li>
@@ -63,7 +63,7 @@
     overflow: hidden;
     max-height: 60vw;
 }
-#side {
+#side{
     position: relative;
     max-height: 100%;
     min-width: 200%;
@@ -85,6 +85,9 @@
     right: 75px;
     font-weight: lighter;
     font-size: 1.5vw;
+}
+.blurb h2{
+    color: var(--darkblue)
 }
 .blurb h5 {
     font-size: 1em;

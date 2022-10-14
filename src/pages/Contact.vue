@@ -28,7 +28,7 @@
         </div>
         <ContactForm :lang="lang"/>
     </div>
-    <div class="Links">
+    <div class="Info">
         <h2>{{json.email}}</h2>
         <h2>{{json.phone}}</h2>
     </div>
@@ -42,8 +42,8 @@
     margin: 3vw;
 }
 
-.Links{
-    grid-area: Links;
+.Info{
+    grid-area: Info;
     background-color: var(--darkblue);
     color: #f0f0f0;
 }
@@ -60,7 +60,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-areas: 
         "SideImage ContactForm"
-        "Links Links";
+        "Info Info";
     
 }
 .SideImage{
@@ -79,7 +79,7 @@
         grid-template-areas: 
         "ContactForm"
         "SideImage"
-        "Links";
+        "Info";
     }
     .SideImage{
         max-height: 300px;

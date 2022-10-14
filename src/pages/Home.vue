@@ -39,6 +39,9 @@
 .blurb h2{
     color: var(--darkblue);
 }
+.blurb p{
+    font-size: 2vw;
+}
 .MainView{
     box-sizing: border-box;
     display: grid;
@@ -106,7 +109,7 @@
         right: 0;
     }
     .blurb h2 {
-        font-size: 3.5em;
+        font-size: 6vw;
     }
     .blurb p {
         font-size: 3em;
