@@ -39,7 +39,7 @@
 .ContactForm{
     grid-area: ContactForm;
     display: block;    
-    margin: 3vw;
+    margin: 2vw 4.5vw;
 }
 
 .Info{

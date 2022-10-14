@@ -11,5 +11,6 @@
     "topic_ph":"Subject of inquiry...",
     "msg":"Description",
     "msg_ph":"Describe your inquiry with more detail...",
-    "submit":"Submit"
+    "submit":"Submit",
+    "success":"Sent! We'll get back to you soon!"
 }

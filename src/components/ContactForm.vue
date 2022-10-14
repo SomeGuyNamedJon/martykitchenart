@@ -30,6 +30,7 @@
                 addErr : '',
                 topicErr : '',
                 commentErr : '',
+                success : true,
             }
         },
         methods: {
@@ -37,7 +38,6 @@
                 e.preventDefault();
                 const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
                 const phoneRegex = /^(\+1)?(-|\.)?(\(\d{3}\)|\d{3})(-|\.)?\d{3}(-|\.)?\d{4}$/
-                var success = true
                 var valid = false //change to true when you want to turn emails on
 
                 //validate fields
@@ -74,7 +74,7 @@
                         "topic" : this.topic,
                         "comment" : this.comment,
                     }
-                    success = emailjs.send("submit_service","contact_form", body)
+                    this.success = emailjs.send("submit_service","contact_form", body)
                     .then(function() {
                         console.log('SUCCESS!')
                         return true
@@ -92,7 +92,7 @@
                     }
                 }
                 
-                if(success){
+                if(this.success){
                     this.$refs.contact_form.reset();
                 }
             } 
@@ -156,11 +156,24 @@
             <font-awesome-icon icon="circle-check"/> &nbsp;{{json.submit}}
         </button>
     </form>
+    <div v-if="success" class="successBox">{{json.success}}</div>
 </template>
 
 <style scoped>
+.successBox {
+    border-radius: 25px;
+    padding-block: 10px;
+    margin: 15px 0;
+    font-size: 1.25em;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #f0f0f0;
+    background-color: green;
+    text-align: center;
+}
 .form-container{
     display: flex;
+    max-width: 100%;
 }
 #emailBox{
     width: 50%;

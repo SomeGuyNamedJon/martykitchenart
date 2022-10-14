@@ -11,5 +11,6 @@
     "topic_ph":"Escribe el asunto",
     "msg":"Mensaje",
     "msg_ph":"Escribe tu mensaje aquí...",
-    "submit":"Enviar"
+    "submit":"Enviar",
+    "success":"¡Enviado! ¡Nos pondremos en contacto contigo pronto!"
 }
