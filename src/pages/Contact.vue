@@ -99,4 +99,12 @@
         bottom: 150%;
     }
 }
+@media only screen and (max-width: 410px) {
+    .contactHead h1{
+        font-size: 12vw;
+    }
+    .Info h2{
+        font-size: 7vw;
+    }
+}
 </style>

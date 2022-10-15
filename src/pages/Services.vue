@@ -141,7 +141,7 @@ button:hover{
 #left{
     position: relative;
     min-height: 100%;
-    min-width: 200%;
+    width: 200%;
 }
 #right{
     position: relative;
