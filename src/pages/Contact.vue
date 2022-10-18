@@ -25,6 +25,7 @@
         <div class="contactHead">
             <h1>{{json.title}}</h1>
             <p>{{json.subtitle}}</p>
+            <h3>San Antonio, TX</h3>
         </div>
         <ContactForm :lang="lang"/>
     </div>
