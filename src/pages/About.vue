@@ -113,11 +113,10 @@
     .contactInfo{
         position: relative;
         bottom: 0;
-        right: 0;
+        right: 1.5vw;
         width: 100%;
         padding-top: 0;
         margin-top: 0;
-        text-align: center;
         font-size: 3.5vw;
     }
     .contactInfo h1{
