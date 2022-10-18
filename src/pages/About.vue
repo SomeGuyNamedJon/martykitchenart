@@ -83,9 +83,9 @@
     position: absolute;
     height: max-content;
     text-align: right;
-    bottom: 50px;
+    bottom: 2vw;
     width: 60%;
-    right: 75px;
+    right: 3vw;
     font-weight: lighter;
     font-size: 1.5vw;
 }
@@ -114,10 +114,14 @@
         position: relative;
         bottom: 0;
         right: 0;
+        width: 100%;
         padding-top: 0;
         margin-top: 0;
         text-align: center;
         font-size: 3.5vw;
+    }
+    .contactInfo h1{
+        font-size: 2em;
     }
     #side {
         width: 100%;
