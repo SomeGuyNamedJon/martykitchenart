@@ -43,6 +43,8 @@
         <div class="contactInfo">
             <h2>{{contact.phone}}</h2>
             <h2>{{contact.email}}</h2>
+            <h1 v-if="lang == 'en'">Now servicing the greater <span style="white-space: nowrap;">San Antonio, TX</span> metropolitan area</h1>
+            <h1 v-else>Ahora presta servicios al área metropolitana de <span style="white-space: nowrap;">San Antonio, TX</span></h1>
         </div>
     </div>
 </div>
@@ -81,10 +83,14 @@
     position: absolute;
     height: max-content;
     text-align: right;
-    bottom: 50px;
-    right: 75px;
+    bottom: 2vw;
+    width: 60%;
+    right: 3vw;
     font-weight: lighter;
     font-size: 1.5vw;
+}
+.contactInfo h1{
+    font-size: 2.5em;
 }
 .blurb h2{
     color: var(--darkblue)
@@ -107,11 +113,14 @@
     .contactInfo{
         position: relative;
         bottom: 0;
-        right: 0;
+        right: 1.5vw;
+        width: 100%;
         padding-top: 0;
         margin-top: 0;
-        text-align: center;
         font-size: 3.5vw;
+    }
+    .contactInfo h1{
+        font-size: 2em;
     }
     #side {
         width: 100%;
