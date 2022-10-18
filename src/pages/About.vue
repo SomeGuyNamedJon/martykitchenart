@@ -43,8 +43,8 @@
         <div class="contactInfo">
             <h2>{{contact.phone}}</h2>
             <h2>{{contact.email}}</h2>
-            <h1 v-if="lang == 'en'">Now servicing the greater <nobr>San Antonio, TX</nobr> metropolitan area</h1>
-            <h1 v-else>Ahora presta servicios al área metropolitana de <nobr>San Antonio, TX</nobr></h1>
+            <h1 v-if="lang == 'en'">Now servicing the greater <span style="white-space: nowrap;">San Antonio, TX</span> metropolitan area</h1>
+            <h1 v-else>Ahora presta servicios al área metropolitana de <span style="white-space: nowrap;">San Antonio, TX</span></h1>
         </div>
     </div>
 </div>
