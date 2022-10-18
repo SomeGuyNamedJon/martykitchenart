@@ -26,7 +26,7 @@
        <div class="blurb">
         <h2>{{json.b_title}}</h2>
         <p>{{json.blurb}}</p>
-        <RouterLink to="/contact"><button>{{json.btn}}</button></RouterLink>
+        <RouterLink to="/about"><button>{{json.btn}}</button></RouterLink>
        </div>
     </div>
     <div class="SideImage">
