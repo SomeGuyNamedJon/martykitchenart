@@ -3,4 +3,7 @@
 # Marty Kitchen Art
 ## Website commissioned for Marty Kitchen Art
 
-This was a website commissioned by my father for his and his brother's business
+This was a website commissioned by my father and uncle's buisiness
+
+# [martykitchenart.com](http://martykitchenart.com)
+This project is staticly hosted through Netlify using the prod branch on this repo
