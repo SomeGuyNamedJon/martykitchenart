@@ -140,4 +140,11 @@ h1 {
   font-weight: 700 !important;
   font-size: 3em;
 }
+
+@media screen and (max-width: 640px) {
+  .langToggle{
+    left: 5vw;
+    right: auto;
+  }
+}
 </style>
