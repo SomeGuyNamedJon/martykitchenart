@@ -33,9 +33,10 @@
     <img src="@/assets/martykitchenart.svg" height="100" id="Logo"/>
     <h2 v-if="langFlag">{{en.slogan}}</h2>
     <h2 v-if="!langFlag">{{es.slogan}}</h2>
-    <NavBar v-if="langFlag" lang="en"/>
-    <NavBar v-if="!langFlag" lang="es"/>
   </div>
+  
+  <NavBar v-if="langFlag" lang="en"/>
+  <NavBar v-if="!langFlag" lang="es"/>
 
   <div class="RouterView">
     <RouterView v-if="langFlag" lang="en"/>
@@ -64,7 +65,7 @@
   position: fixed;
   z-index: 999;
   right: 5vw;
-  top: 30px;
+  top: 10px;
   min-width: 7vw;
   padding: 5px;
   font-size: large;
@@ -77,16 +78,25 @@
   min-height: 100vh;
   box-sizing: border-box;
   display: grid;
-  grid-template-rows: min-content max-content min-content;
+  grid-template-rows: min-content min-content max-content min-content;
   grid-template-columns: 1fr;
   grid-template-areas: 
     "Header"
+    "NavBar"
     "RouterView"
     "Footer";
 }
 
 .RouterView {
   grid-area: RouterView;
+}
+
+.NavBar{
+  grid-area: NavBar;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 998;
 }
 
 .Header {

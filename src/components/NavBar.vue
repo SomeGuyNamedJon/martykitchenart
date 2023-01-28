@@ -27,7 +27,7 @@
 </script>
 
 <template>
-    <div :class="{shown: checked}">
+    <div class="NavBar" :class="{shown: checked}">
     <div class="coverBar">
         <div v-if="!checked" class="currentPage">
             <div v-if="currentPage && pages.includes(currentPage)">
