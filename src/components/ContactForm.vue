@@ -10,7 +10,7 @@
             lang: {type: String}
         },
         setup(props){
-            emailjs.init('eE-trqXuIbiTQ-XvR');
+            emailjs.init('LVxQf-JnFb_j4Vmso');
             const json = (props.lang === 'es') ? es : en
             const err = (props.lang === 'es') ? esErr : enErr
             return {json, err}
