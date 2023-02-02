@@ -43,8 +43,7 @@
     <RouterView v-if="!langFlag" lang="es"/>
   </div>
 
-  <p class="Footer" v-if="langFlag">{{en.footer}}</p>
-  <p class="Footer" v-if="!langFlag">{{es.footer}}</p>
+  <p class="Footer">©2023 Marty Kitchen Art</p>
   <div class="BottomFill"></div>
  </div>
 </template>
